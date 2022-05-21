@@ -1,0 +1,28 @@
+{
+  "name": "danielpz.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && gulp",
+    "serve": "browser-sync ./dist --watch && gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dapize/danielpz.com.git"
+  },
+  "keywords": [],
+  "author": "dapize",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dapize/danielpz.com/issues"
+  },
+  "homepage": "https://github.com/dapize/danielpz.com#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.52.1"
+  }
+}

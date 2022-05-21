@@ -1,0 +1,149 @@
+@import 'reset';
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes slide {
+  from {
+    background-position-x: left;
+  }
+
+  to {
+    background-position-x: right;
+  }
+}
+
+main,
+ul,
+li,
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header,
+p,
+li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition-property: opacity, transform;
+  transition-duration: .75s;
+  transition-timing-function: ease-in-out;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  background-image: url('../images/bg.jpg');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  overflow: hidden;
+  animation: slide 90s linear infinite alternate;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+
+  &.active {
+    header,
+    p,
+    li {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+h1 {
+  font-size: 84px;
+  font-weight: 900;
+  margin-bottom: 37px;
+  line-height: 66px;
+}
+
+p {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 28px;
+  margin-bottom: 30px;
+  transition-delay: 0.65s;
+}
+
+li {
+  height: 110px;
+  width: 110px;
+  margin-right: 5px;
+
+  &:first-child {
+    transition-delay: 1.15s;
+  }
+
+  &:nth-child(2) {
+    transition-delay: 1.45s;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 1.75s;
+  }
+
+  &:nth-child(4) {
+    transition-delay: 2.05s;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    width: 88px;
+    height: 88px;
+    border: 1px solid white;
+    border-radius: 50px;
+    overflow: hidden;
+    text-indent: -999px;
+    transition: background-color .25s ease,
+                transform .25s ease,
+
+    span {
+      position: absolute;
+      top: -200px;
+      left: 0;
+    }
+
+    &:before {
+      content: '';
+      width: 35px;
+      height: 35px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &[data-icon="github"]:before {
+      background-image: url('../images/icons/github.svg');
+    }
+
+    &[data-icon="facebook"]:before {
+      background-image: url('../images/icons/facebook.svg');
+    }
+
+    &[data-icon="linkedin"]:before {
+      background-image: url('../images/icons/linkedin.svg');
+    }
+
+    &[data-icon="email"]:before {
+      background-image: url('../images/icons/email.svg');
+    }
+
+    &:hover {
+      background-color: rgb(#fff, 0.15);
+      transform: scale(1.15);
+    }
+  }
+}
