@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && gulp",
-    "serve": "browser-sync ./dist --watch && gulp watch"
+    "build": "rm -rf docs && gulp",
+    "serve": "browser-sync ./docs --watch && gulp watch"
   },
   "repository": {
     "type": "git",
